@@ -1,0 +1,10 @@
+.to-do-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid grey;
+  width: 400px;
+  height: 35px;
+  list-style: none;
+}

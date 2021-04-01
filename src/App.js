@@ -1,6 +1,6 @@
 import "./App.css";
 import AddToDo from "./components/AddToDo.js";
-import ToDo from "./components/ToDo.js";
+import ToDoList from "./components/ToDoList.js";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       </header>
       <main className="main">
         <ul>
-          <ToDo />
+          <ToDoList />
         </ul>
       </main>
     </div>

@@ -2,7 +2,7 @@ import "./AddToDo.css";
 export default function AddToDo({ onAddToDo }) {
   function handleSubmit(event) {
     event.preventDefault();
-    const form = event.targetM;
+    const form = event.target;
     const formInput = form.toDo.value;
     onAddToDo(formInput);
     form.reset();

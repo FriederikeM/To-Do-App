@@ -17,9 +17,7 @@ function App() {
         <AddToDo onAddToDo={handleAddToDos} />
       </header>
       <main className="main">
-        <ul>
-          <ToDoList />
-        </ul>
+        <ToDoList toDos={toDos} />
       </main>
     </div>
   );

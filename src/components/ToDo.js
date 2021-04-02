@@ -1,6 +1,10 @@
 import "./ToDo.css";
 
-export default function ToDo({ name, onToggleStatus, isDone }) {
+export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
+  function handleDeleteClick() {
+    onDeleteToDo(name);
+  }
+
   function handleToggleClick() {
     onToggleStatus(name);
   }
@@ -9,7 +13,9 @@ export default function ToDo({ name, onToggleStatus, isDone }) {
 
   return (
     <li className="to-do-list-item">
-      <button className="remove-button">Remove</button>
+      <button className="remove-button" onClick={handleDeleteClick}>
+        Remove
+      </button>
       <h3>{name}</h3>
       <button
         className={`status-button ${classForStatus}`}

@@ -23,13 +23,22 @@ function App() {
     setToDos(newToDos);
   }
 
+  function handleDeleteToDo(name) {
+    const newToDos = toDos.filter((toDo) => toDo.name !== name);
+    setToDos(newToDos);
+  }
+
   return (
     <div className="App">
       <header className="header">
         <AddToDo onAddToDo={handleAddToDos} />
       </header>
       <main className="main">
-        <ToDoList toDos={toDos} onToggleStatus={handleToggleStatus} />
+        <ToDoList
+          toDos={toDos}
+          onToggleStatus={handleToggleStatus}
+          onDeleteToDo={handleDeleteToDo}
+        />
       </main>
     </div>
   );

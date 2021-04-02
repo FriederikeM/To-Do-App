@@ -1,6 +1,6 @@
 import "./ToDo.css";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { AiFillCheckCircle } from "react-icons/ai";
+import { MdEdit } from "react-icons/md";
 import { useState } from "react";
 
 export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
@@ -26,8 +26,9 @@ export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
 
   return (
     <li className="to-do-list-item">
-      <h3 className={`task-name ${classForText}`} onClick={handleNameClick}>
-        {taskName} {isDone ? <AiFillCheckCircle className="checkmark" /> : ""}
+      <h3 className={`task-name ${classForText}`}>
+        {taskName}
+        <MdEdit className="edit" onClick={handleNameClick} />
       </h3>
       <div className="to-do-buttons">
         <button

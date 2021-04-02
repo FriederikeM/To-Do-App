@@ -78,10 +78,13 @@
   text-align: left;
 }
 
-.checkmark {
+.edit {
   position: relative;
   top: 2px;
   font-size: 16px;
+  cursor: pointer;
+  margin-left: 7px;
+  color: rgb(131, 131, 131);
 }
 
 .text-moved {

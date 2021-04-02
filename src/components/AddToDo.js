@@ -9,20 +9,18 @@ export default function AddToDo({ onAddToDo }) {
   }
 
   return (
-    <div className="add-to-do-wrapper">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Add a to do"
-          className="to-do-bar"
-          name="toDo"
-          id="toDo"
-          required
-        />
-        <button type="submit" className="add-button">
-          Add
-        </button>
-      </form>
-    </div>
+    <form className="add-to-do-wrapper" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Add a to do"
+        className="to-do-bar"
+        name="toDo"
+        id="toDo"
+        required
+      />
+      <button type="submit" className="add-button">
+        Add
+      </button>
+    </form>
   );
 }

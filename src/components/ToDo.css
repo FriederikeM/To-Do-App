@@ -30,6 +30,8 @@
   box-shadow: 3px 3px 8px #b1b1b1, -3px -2px 8px #ffffff;
   position: relative;
   top: 1px;
+  color: whitesmoke;
+  font-weight: bold;
 }
 
 .status-button:hover {
@@ -41,7 +43,6 @@
 
 .toDo--done {
   background-color: green;
-  color: whitesmoke;
   position: relative;
   right: 185px;
 }

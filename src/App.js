@@ -11,13 +11,25 @@ function App() {
     setToDos(newTodos);
   }
 
+  function handleToggleStatus(name) {
+    const newToDos = toDos.map((toDo) => {
+      if (toDo.name === name) {
+        return { ...toDo, isDone: !toDo.isDone };
+      } else {
+        return toDo;
+      }
+    });
+
+    setToDos(newToDos);
+  }
+
   return (
     <div className="App">
       <header className="header">
         <AddToDo onAddToDo={handleAddToDos} />
       </header>
       <main className="main">
-        <ToDoList toDos={toDos} />
+        <ToDoList toDos={toDos} onToggleStatus={handleToggleStatus} />
       </main>
     </div>
   );

@@ -1,4 +1,6 @@
 import "./ToDo.css";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
   function handleDeleteClick() {
@@ -10,10 +12,13 @@ export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
   }
 
   const classForStatus = isDone ? "toDo--done" : "toDo--pending";
+  const classForText = isDone ? "text-moved" : "text-unmoved";
 
   return (
     <li className="to-do-list-item">
-      <h3 className="task-name">{name}</h3>
+      <h3 className={`task-name ${classForText}`}>
+        {name} {isDone ? <AiFillCheckCircle className="checkmark" /> : ""}
+      </h3>
       <div className="to-do-buttons">
         <button
           className={`status-button ${classForStatus}`}
@@ -22,7 +27,7 @@ export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
           {isDone ? "Done" : "Pending"}
         </button>
         <button className="remove-button" onClick={handleDeleteClick}>
-          X
+          <FaRegTrashAlt />
         </button>
       </div>
     </li>

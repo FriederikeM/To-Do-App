@@ -13,16 +13,18 @@ export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
 
   return (
     <li className="to-do-list-item">
-      <button className="remove-button" onClick={handleDeleteClick}>
-        Remove
-      </button>
-      <h3>{name}</h3>
-      <button
-        className={`status-button ${classForStatus}`}
-        onClick={handleToggleClick}
-      >
-        {isDone ? "Done" : "Pending"}
-      </button>
+      <h3 className="task-name">{name}</h3>
+      <div className="to-do-buttons">
+        <button
+          className={`status-button ${classForStatus}`}
+          onClick={handleToggleClick}
+        >
+          {isDone ? "Done" : "Pending"}
+        </button>
+        <button className="remove-button" onClick={handleDeleteClick}>
+          X
+        </button>
+      </div>
     </li>
   );
 }

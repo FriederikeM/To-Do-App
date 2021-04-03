@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [toDos, setToDos] = useState([]);
+  const [filterType, setFilterType] = useState("");
 
   function handleAddToDos(taskName) {
     const newTodos = [...toDos, { name: taskName, isDone: false }];
@@ -29,19 +30,15 @@ function App() {
     setToDos(newToDos);
   }
 
-  function handleFilterAll() {
-    setToDos(toDos);
+  let filterToDos;
+
+  if (filterType === true) {
+    filterToDos = toDos.filter((toDo) => toDo.isDone === true);
+  } else if (filterType === false) {
+    filterToDos = toDos.filter((toDo) => toDo.isDone !== true);
+  } else {
+    filterToDos = toDos;
   }
-
-  let doneToDos = function handleFilterDone() {
-    const doneToDos = toDos.filter((toDo) => toDo.isDone === true);
-    setToDos(doneToDos);
-  };
-
-  let pendingToDos = function handleFilterToDo() {
-    const pendingToDos = toDos.filter((toDo) => toDo.isDone !== true);
-    setToDos(pendingToDos);
-  };
 
   return (
     <div className="App">
@@ -50,18 +47,13 @@ function App() {
       </header>
       <main className="main">
         <ToDoList
-          toDos={toDos}
+          toDos={filterToDos}
           onToggleStatus={handleToggleStatus}
           onDeleteToDo={handleDeleteToDo}
         />
       </main>
       <footer className="footer">
-        <FilterToDos
-          toDos={toDos}
-          onClickAll={handleFilterAll}
-          onClickDone={doneToDos}
-          onClickToDo={pendingToDos}
-        />
+        <FilterToDos setFilterType={setFilterType} />
       </footer>
     </div>
   );

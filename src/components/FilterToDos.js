@@ -1,20 +1,18 @@
 import "./FilterToDos.css";
 
-export default function FilterToDos({ onClickAll, onClickDone, onClickToDo }) {
-  // function handleAllFilterClick() {
-  //   onClickAll();
-  // }
+export default function FilterToDos({ setFilterType }) {
+  function handleAllFilterClick() {
+    setFilterType("");
+  }
   function handleDoneFilterClick() {
-    onClickDone();
+    setFilterType(true);
   }
   function handleToDoFilterClick() {
-    onClickToDo();
+    setFilterType(false);
   }
   return (
     <div className="filter-buttons">
-      <button
-        className="all-button" //onClick={handleAllFilterClick}
-      >
+      <button className="all-button" onClick={handleAllFilterClick}>
         All
       </button>
       <button className="done-button" onClick={handleDoneFilterClick}>

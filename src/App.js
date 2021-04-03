@@ -11,7 +11,7 @@ function App() {
   function handleAddToDos(name) {
     const newTodos = [...toDos, { name: name, isDone: false }];
     setToDos(newTodos);
-    toDos.map((toDo) => {
+    toDos.forEach((toDo) => {
       if (name === toDo.name) {
         alert(
           "Oops! you have already created this task, please choose a different name"

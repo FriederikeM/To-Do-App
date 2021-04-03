@@ -25,7 +25,7 @@ body {
   background-color: #ecf0f3;
   display: grid;
   grid-template-rows: [header] 100px [content] 480px [footer] 60px;
-  margin: 80px 0;
+  margin: 20px 0;
 }
 
 header {
@@ -41,7 +41,7 @@ main {
   justify-content: center;
   overflow-y: scroll;
   padding: 5px;
-  /* box-shadow: inset 5px 5px 15px rgba(128, 128, 128, 0.5); */
+  box-shadow: inset 5px 5px 15px rgba(128, 128, 128, 0.2);
 }
 
 main::after {

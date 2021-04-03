@@ -37,7 +37,7 @@ main {
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow-y: scroll;
   padding: 5px;

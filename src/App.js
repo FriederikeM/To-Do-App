@@ -8,9 +8,17 @@ function App() {
   const [toDos, setToDos] = useState([]);
   const [filterType, setFilterType] = useState("");
 
-  function handleAddToDos(taskName) {
-    const newTodos = [...toDos, { name: taskName, isDone: false }];
+  function handleAddToDos(name) {
+    const newTodos = [...toDos, { name: name, isDone: false }];
     setToDos(newTodos);
+    toDos.map((toDo) => {
+      if (name === toDo.name) {
+        alert(
+          "Oops! you have already created this task, please choose a different name"
+        );
+        setToDos(toDos);
+      }
+    });
   }
 
   function handleToggleStatus(name) {

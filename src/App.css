@@ -17,21 +17,45 @@ body {
   font-family: sans-serif;
   text-align: center;
   border: none;
-  height: 600px;
+  height: 640px;
   width: 360px;
   max-width: 700px;
   border-radius: 40px;
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
   background-color: #ecf0f3;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: [header] 100px [content] 480px [footer] 60px;
   margin: 80px 0;
 }
 
+header {
+  grid-row: header;
+}
+
 main {
+  grid-row: content;
   padding-top: 30px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  padding: 5px;
+  /* box-shadow: inset 5px 5px 15px rgba(128, 128, 128, 0.5); */
+}
+
+main::after {
+  content: "";
+  display: block;
+  height: 15px;
+  width: 100%;
+}
+
+footer {
+  grid-row: footer;
+  background-color: white;
+  border-radius: 0 0 40px 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }

@@ -1,9 +1,9 @@
 import "./FilterToDos.css";
 
 export default function FilterToDos({ onClickAll, onClickDone, onClickToDo }) {
-  function handleAllFilterClick() {
-    onClickAll();
-  }
+  // function handleAllFilterClick() {
+  //   onClickAll();
+  // }
   function handleDoneFilterClick() {
     onClickDone();
   }
@@ -12,7 +12,9 @@ export default function FilterToDos({ onClickAll, onClickDone, onClickToDo }) {
   }
   return (
     <div className="filter-buttons">
-      <button className="all-button" onClick={handleAllFilterClick}>
+      <button
+        className="all-button" //onClick={handleAllFilterClick}
+      >
         All
       </button>
       <button className="done-button" onClick={handleDoneFilterClick}>

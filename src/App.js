@@ -33,15 +33,15 @@ function App() {
     setToDos(toDos);
   }
 
-  function handleFilterDone() {
+  let doneToDos = function handleFilterDone() {
     const doneToDos = toDos.filter((toDo) => toDo.isDone === true);
     setToDos(doneToDos);
-  }
+  };
 
-  function handleFilterToDo() {
-    const doneToDos = toDos.filter((toDo) => toDo.isDone !== true);
-    setToDos(doneToDos);
-  }
+  let pendingToDos = function handleFilterToDo() {
+    const pendingToDos = toDos.filter((toDo) => toDo.isDone !== true);
+    setToDos(pendingToDos);
+  };
 
   return (
     <div className="App">
@@ -59,8 +59,8 @@ function App() {
         <FilterToDos
           toDos={toDos}
           onClickAll={handleFilterAll}
-          onClickDone={handleFilterDone}
-          onClickToDo={handleFilterToDo}
+          onClickDone={doneToDos}
+          onClickToDo={pendingToDos}
         />
       </footer>
     </div>

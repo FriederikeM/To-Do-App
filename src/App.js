@@ -29,6 +29,20 @@ function App() {
     setToDos(newToDos);
   }
 
+  function handleFilterAll() {
+    setToDos(toDos);
+  }
+
+  function handleFilterDone() {
+    const doneToDos = toDos.filter((toDo) => toDo.isDone === true);
+    setToDos(doneToDos);
+  }
+
+  function handleFilterToDo() {
+    const doneToDos = toDos.filter((toDo) => toDo.isDone !== true);
+    setToDos(doneToDos);
+  }
+
   return (
     <div className="App">
       <header className="header">
@@ -42,7 +56,12 @@ function App() {
         />
       </main>
       <footer className="footer">
-        <FilterToDos />
+        <FilterToDos
+          toDos={toDos}
+          onClickAll={handleFilterAll}
+          onClickDone={handleFilterDone}
+          onClickToDo={handleFilterToDo}
+        />
       </footer>
     </div>
   );

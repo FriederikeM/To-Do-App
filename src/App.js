@@ -1,6 +1,7 @@
 import "./App.css";
 import AddToDo from "./components/AddToDo.js";
 import ToDoList from "./components/ToDoList.js";
+import FilterToDos from "./components/FilterToDos.js";
 import { useState } from "react";
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
           onDeleteToDo={handleDeleteToDo}
         />
       </main>
+      <footer className="footer">
+        <FilterToDos />
+      </footer>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-# A smalle To Do List App using React
+# A small To Do List App using React
 
 - Create new to dos
 - Delete to dos

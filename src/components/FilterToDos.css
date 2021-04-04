@@ -23,3 +23,9 @@
   margin-left: 10px;
   letter-spacing: 1px;
 }
+
+.active-all-filter,
+.active-done-filter,
+.active-to-do-filter {
+  font-weight: bold;
+}

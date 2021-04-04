@@ -61,7 +61,7 @@ function App() {
         />
       </main>
       <footer className="footer">
-        <FilterToDos setFilterType={setFilterType} />
+        <FilterToDos setFilterType={setFilterType} filterType={filterType} />
       </footer>
     </div>
   );

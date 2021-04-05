@@ -11,6 +11,9 @@ function App() {
   function handleAddToDos(name) {
     const newTodos = [...toDos, { name: name, isDone: false }];
     setToDos(newTodos);
+    for (let i = 0; i < newTodos.length; i++) {
+      newTodos[i].index = i;
+    }
     toDos.forEach((toDo) => {
       if (name === toDo.name) {
         alert(
@@ -48,6 +51,33 @@ function App() {
     filterToDos = toDos;
   }
 
+  function handleNameChange(newName, index) {
+    toDos.forEach((toDo) => {
+      if (newName === toDo.name) {
+        alert(
+          "Oops! you have already created this task, please choose a different name"
+        );
+        return {
+          ...toDo,
+          name: toDo.name,
+        };
+        setToDos(toDos);
+      } else {
+        const newTodoName = toDos.map((toDo) => {
+          if (toDo.index === index) {
+            return {
+              ...toDo,
+              name: newName,
+            };
+          } else {
+            return toDo;
+          }
+        });
+        setToDos(newTodoName);
+      }
+    });
+  }
+
   return (
     <div className="App">
       <header className="header">
@@ -58,6 +88,7 @@ function App() {
           toDos={filterToDos}
           onToggleStatus={handleToggleStatus}
           onDeleteToDo={handleDeleteToDo}
+          handleNameChange={handleNameChange}
         />
       </main>
       <footer className="footer">

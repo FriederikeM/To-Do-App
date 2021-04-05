@@ -1,15 +1,21 @@
 import ToDo from "./ToDo.js";
 
-export default function ToDoList({ toDos, onToggleStatus, onDeleteToDo }) {
+export default function ToDoList({
+  toDos,
+  onToggleStatus,
+  onDeleteToDo,
+  handleNameChange,
+}) {
   function renderToDos() {
     return toDos.map((toDo, index) => {
       return (
         <ToDo
-          key={toDo.name}
+          index={toDo.index}
           name={toDo.name}
           onToggleStatus={onToggleStatus}
           isDone={toDo.isDone}
           onDeleteToDo={onDeleteToDo}
+          handleNameChange={handleNameChange}
         />
       );
     });

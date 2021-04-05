@@ -1,9 +1,15 @@
 import "./ToDo.css";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import { useState } from "react";
 
-export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
+export default function ToDo({
+  name,
+  onToggleStatus,
+  isDone,
+  onDeleteToDo,
+  handleNameChange,
+  index,
+}) {
   function handleDeleteClick() {
     onDeleteToDo(name);
   }
@@ -15,19 +21,17 @@ export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
   const classForStatus = isDone ? "toDo--done" : "toDo--pending";
   const classForText = isDone ? "text-moved" : "text-unmoved";
 
-  const [taskName, setTaskName] = useState(`${name}`);
-
   function handleNameClick() {
     let newName = prompt("Please enter a new name");
     if (newName !== "" && newName !== null) {
-      setTaskName(newName);
+      handleNameChange(newName, index);
     }
   }
 
   return (
     <li className="to-do-list-item">
       <h3 className={`task-name ${classForText}`}>
-        {taskName}
+        {name}
         <MdEdit className="edit" onClick={handleNameClick} />
       </h3>
       <div className="to-do-buttons">

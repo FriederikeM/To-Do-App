@@ -61,7 +61,6 @@ function App() {
           ...toDo,
           name: toDo.name,
         };
-        setToDos(toDos);
       } else {
         const newTodoName = toDos.map((toDo) => {
           if (toDo.index === index) {

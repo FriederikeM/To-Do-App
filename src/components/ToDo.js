@@ -19,7 +19,15 @@ export default function ToDo({ name, onToggleStatus, isDone, onDeleteToDo }) {
 
   function handleNameClick() {
     let newName = prompt("Please enter a new name");
-    if (newName !== "" && newName !== null) {
+    console.log(newName);
+    console.log(taskName);
+    if (newName === name) {
+      alert(
+        "Oops! you have already created this task, please choose a different name"
+      );
+      setTaskName(taskName);
+      console.log("hello from the same task name");
+    } else if (newName !== "" && newName !== null) {
       setTaskName(newName);
     }
   }

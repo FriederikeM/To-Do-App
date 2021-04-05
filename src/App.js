@@ -52,30 +52,28 @@ function App() {
   }
 
   function handleNameChange(newName, index) {
-    toDos.forEach((toDo) => {
-      if (newName === toDo.name) {
-        alert(
-          "Oops! you have already created this task, please choose a different name"
-        );
-        // return {
-        //   ...toDo,
-        //   name: toDo.name,
-        // };
-        // setToDos(toDos);
-      } else {
-        const newTodoName = toDos.map((toDo) => {
-          if (toDo.index === index) {
-            return {
-              ...toDo,
-              name: newName,
-            };
-          } else {
-            return toDo;
-          }
-        });
-        setToDos(newTodoName);
-      }
+    const isSameName = toDos.filter((toDo) => {
+      return toDo.name === newName;
     });
+    if (isSameName.length === 0) {
+      const newTodoName = toDos.map((toDo) => {
+        if (toDo.index === index) {
+          return {
+            ...toDo,
+            name: newName,
+          };
+        } else {
+          return toDo;
+        }
+      });
+      setToDos(newTodoName);
+      return true;
+    } else {
+      alert(
+        "Oops! you have already created this task, please choose a different name"
+      );
+      return false;
+    }
   }
 
   return (

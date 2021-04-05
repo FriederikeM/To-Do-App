@@ -22,9 +22,12 @@ export default function ToDo({
   const classForText = isDone ? "text-moved" : "text-unmoved";
 
   function handleNameClick() {
-    let newName = prompt("Please enter a new name");
-    if (newName !== "" && newName !== null) {
-      handleNameChange(newName, index);
+    let isDone = false;
+    while (isDone === false) {
+      let newName = prompt("Please enter a new name");
+      if (newName !== "" && newName !== null) {
+        isDone = handleNameChange(newName, index);
+      }
     }
   }
 

@@ -57,10 +57,11 @@ function App() {
         alert(
           "Oops! you have already created this task, please choose a different name"
         );
-        return {
-          ...toDo,
-          name: toDo.name,
-        };
+        // return {
+        //   ...toDo,
+        //   name: toDo.name,
+        // };
+        // setToDos(toDos);
       } else {
         const newTodoName = toDos.map((toDo) => {
           if (toDo.index === index) {

@@ -51,6 +51,10 @@ function App() {
     filterToDos = toDos;
   }
 
+  function handleFilterClick(filterValue) {
+    setFilterType(filterValue);
+  }
+
   function handleNameChange(newName, index) {
     const isSameName = toDos.filter((toDo) => {
       return toDo.name === newName;
@@ -90,7 +94,10 @@ function App() {
         />
       </main>
       <footer className="footer">
-        <FilterToDos setFilterType={setFilterType} filterType={filterType} />
+        <FilterToDos
+          handleFilterClick={handleFilterClick}
+          filterType={filterType}
+        />
       </footer>
     </div>
   );

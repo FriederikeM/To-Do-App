@@ -1,0 +1,31 @@
+.all-button,
+.done-button,
+.to-do-button {
+  font-size: 20px;
+  border: none;
+  background-color: white;
+  color: rgb(100, 100, 100);
+  cursor: pointer;
+}
+
+.done-button {
+  margin: 0 25px;
+  padding: 0 25px;
+  border-right: 1px solid rgb(160, 160, 160);
+  border-left: 1px solid rgb(160, 160, 160);
+}
+
+.to-do-button {
+  padding-left: -10px;
+}
+
+.all-button {
+  margin-left: 10px;
+  letter-spacing: 1px;
+}
+
+.active-all-filter,
+.active-done-filter,
+.active-to-do-filter {
+  font-weight: bold;
+}

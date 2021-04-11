@@ -1,0 +1,50 @@
+.add-to-do-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0 0;
+}
+
+.to-do-bar {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  margin-right: 15px;
+  color: #555;
+  background-color: #ecf0f3;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+.add-button {
+  font-size: 16px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  border: 3px solid blue;
+  cursor: pointer;
+  background-color: blue;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.2);
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.add-button:hover {
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.2),
+    inset -15px -10px 15px rgba(70, 70, 70, 0.4),
+    inset 15px 10px 15px rgb(47, 47, 255);
+  border: none;
+  padding: 10px 15px;
+}
+
+.add-button:active {
+  transform: translateY(1px);
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.2),
+    inset -15px -10px 15px rgb(47, 47, 255),
+    inset 15px 10px 15px rgba(70, 70, 70, 0.4);
+  border: 3px solid rgba(0, 0, 255, 0.65);
+  padding: 7px 12px;
+}

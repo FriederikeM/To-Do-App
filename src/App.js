@@ -60,7 +60,7 @@ function App() {
       return toDo.name === newName;
     });
     if (isSameName.length === 0) {
-      const newTodoName = toDos.map((toDo) => {
+      const newTodos = toDos.map((toDo) => {
         if (toDo.index === index) {
           return {
             ...toDo,
@@ -70,7 +70,7 @@ function App() {
           return toDo;
         }
       });
-      setToDos(newTodoName);
+      setToDos(newTodos);
       return true;
     } else {
       alert(
@@ -90,12 +90,12 @@ function App() {
           toDos={filterToDos}
           onToggleStatus={handleToggleStatus}
           onDeleteToDo={handleDeleteToDo}
-          handleNameChange={handleNameChange}
+          onNameChanged={handleNameChange}
         />
       </main>
       <footer className="footer">
         <FilterToDos
-          handleFilterClick={handleFilterClick}
+          onChangeFilterType={handleFilterClick}
           filterType={filterType}
         />
       </footer>

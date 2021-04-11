@@ -1,14 +1,14 @@
 import "./FilterToDos.css";
 
-export default function FilterToDos({ filterType, handleFilterClick }) {
+export default function FilterToDos({ filterType, onChangeFilterType }) {
   function handleAllFilterClick() {
-    handleFilterClick("");
+    onChangeFilterType("");
   }
   function handleDoneFilterClick() {
-    handleFilterClick(true);
+    onChangeFilterType(true);
   }
   function handleToDoFilterClick() {
-    handleFilterClick(false);
+    onChangeFilterType(false);
   }
 
   let classActiveAllFilter;

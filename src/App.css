@@ -28,11 +28,11 @@ body {
   margin: 20px 0;
 }
 
-header {
+.header {
   grid-row: header;
 }
 
-main {
+.main {
   grid-row: content;
   padding-top: 30px;
   display: flex;
@@ -44,14 +44,14 @@ main {
   box-shadow: inset 5px 5px 15px rgba(128, 128, 128, 0.2);
 }
 
-main::after {
+.main::after {
   content: "";
   display: block;
   height: 15px;
   width: 100%;
 }
 
-footer {
+.footer {
   grid-row: footer;
   background-color: white;
   border-radius: 0 0 40px 40px;

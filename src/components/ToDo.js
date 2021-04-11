@@ -7,7 +7,7 @@ export default function ToDo({
   onToggleStatus,
   isDone,
   onDeleteToDo,
-  handleNameChange,
+  onNameChanged,
   index,
 }) {
   function handleDeleteClick() {
@@ -22,11 +22,11 @@ export default function ToDo({
   const classForText = isDone ? "text-moved" : "text-unmoved";
 
   function handleNameClick() {
-    let isDone = false;
-    while (isDone === false) {
+    let changingNameisDone = false;
+    while (changingNameisDone === false) {
       let newName = prompt("Please enter a new name");
       if (newName !== "" && newName !== null) {
-        isDone = handleNameChange(newName, index);
+        changingNameisDone = onNameChanged(newName, index);
       }
     }
   }

@@ -4,7 +4,7 @@ export default function ToDoList({
   toDos,
   onToggleStatus,
   onDeleteToDo,
-  handleNameChange,
+  onNameChanged,
 }) {
   function renderToDos() {
     return toDos.map((toDo, index) => {
@@ -15,7 +15,7 @@ export default function ToDoList({
           onToggleStatus={onToggleStatus}
           isDone={toDo.isDone}
           onDeleteToDo={onDeleteToDo}
-          handleNameChange={handleNameChange}
+          onNameChanged={onNameChanged}
         />
       );
     });
